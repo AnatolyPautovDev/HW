@@ -1,2 +1,4 @@
 .container {
+  flex-direction: row !important;
+  gap: 127px;
 }
