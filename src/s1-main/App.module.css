@@ -36,7 +36,7 @@
 .hwTitle {
   font-weight: 600;
   font-size: 22px;
-  color: #000;
+  color: var(--color);
   border-bottom: 1px solid #d9d9d9;
   padding-bottom: 10px;
 }

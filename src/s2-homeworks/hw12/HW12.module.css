@@ -19,5 +19,15 @@ html {
 }
 
 .select {
-
+  font-family: 'Montserrat', sans-serif;
+  height: 36px;
+  width: 170px;
+  background-color: transparent;
+  color: var(--color);
+  align-self: start;
+  text-transform: capitalize;
+  border: 1px solid var(--color);
+}
+option {
+  color: #000
 }
