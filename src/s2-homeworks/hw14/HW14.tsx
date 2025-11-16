@@ -35,9 +35,12 @@ const HW14 = () => {
         getTechs(value)
             .then((res) => {
                 // делает студент
-
+                const techs = res?.data.techs
                 // сохранить пришедшие данные
-
+                  if (techs) {
+                    setTechs(res?.data.techs)
+                    setLoading(false)
+                  }
                 //
             })
     }
@@ -45,10 +48,9 @@ const HW14 = () => {
     const onChangeText = (value: string) => {
         setFind(value)
         // делает студент
-
         // добавить/заменить значение в квери урла
         // setSearchParams(
-
+        setSearchParams({find: value})
         //
     }
 
@@ -65,10 +67,10 @@ const HW14 = () => {
     ))
 
     return (
-        <div id={'hw14'}>
+        <div id={'hw14'} className={s2.hwWrapper}>
             <div className={s2.hwTitle}>Homework #14</div>
 
-            <div className={s2.hw}>
+            <div className={s2.hw} style={{gap: '10px'}}>
                 <SuperDebouncedInput
                     id={'hw14-super-debounced-input'}
                     value={find}
@@ -77,10 +79,12 @@ const HW14 = () => {
                 />
 
                 <div id={'hw14-loading'} className={s.loading}>
-                    {isLoading ? '...ищем' : <br/>}
+                    {isLoading ? '...ищем' : ''}
                 </div>
 
-                {mappedTechs}
+                <div className={s.techWrapper}>
+                  {mappedTechs}
+                </div>
             </div>
         </div>
     )
